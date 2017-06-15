@@ -1,0 +1,22 @@
+$ = Jquery;
+const siths = [
+  'Vader',
+  'Sidious',
+  'Plagueis the Wise'
+];
+
+const root = document.findElementById('root');
+let innerHtml = '';
+for (let x = 0; x < siths.length; x++) {
+  innerHtml =
+    "<div id='sith" + x + "' class='sith'>" +
+      siths[x] +
+    "</div>"
+}
+$(root).html(html)
+
+$('.sith').onClick(function (element) {
+  // figure out which sith by the id
+  // figure out any other info you need for that sith
+  // do your logic
+})

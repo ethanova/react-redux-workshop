@@ -1,0 +1,32 @@
+1  $('#modal-next-btn').attr('tabindex', ++tabIndex);
+2  $('#returns-modal-cancel-btn').attr('tabindex', ++tabIndex);
+3  
+4  $('#returns-modal-cancel-btn').on('keydown', (e) => {
+5    if (e.keyCode === 9 || e.which === 9) {
+6      e.stopPropagation();
+7      e.preventDefault();
+8  
+9      if (e.shiftKey === false) {
+10        $('#invoice_dialog_search_input').focus();
+11     } else {
+12       if (!$('#modal-next-btn').prop('disabled')) {
+13         $('#modal-next-btn')[0].focus();
+14       } else {
+15         $(`#saleableChk${ABC.returns.numOfRows}`).focus();
+16       }
+17     }
+18   }
+19 });
+20
+21 $('#modal-next-btn').on('keydown', (e) => {
+22   if (e.keyCode === 9 || e.which === 9) {
+23     e.stopPropagation();
+24     e.preventDefault();
+25 
+26     if (e.shiftKey === false) {
+27       $('#returns-modal-cancel-btn').focus();
+28    } else {
+29      $(`#saleableChk${ABC.returns.numOfRows}`).focus();
+30    }
+31  }
+32 });

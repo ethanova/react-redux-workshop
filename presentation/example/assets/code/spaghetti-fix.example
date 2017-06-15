@@ -1,0 +1,9 @@
+const returnsModalFooter = (props) => {
+  return (
+    <div>
+      <button onClick={props.onBtnPress} tabIndex={props.tabIndex}>
+        {props.btnText}
+      </button>
+    </div>
+  )
+}

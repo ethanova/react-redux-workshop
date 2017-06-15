@@ -1,0 +1,31 @@
+$('#modal-next-btn').attr('tabindex', ++tabIndex);
+$('#returns-modal-cancel-btn').attr('tabindex', ++tabIndex);
+
+$('#returns-modal-cancel-btn').on('keydown', (e) => {
+  if (e.keyCode === 9 || e.which === 9) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    if (e.shiftKey === false) {
+       $('#invoice_dialog_search_input').focus();
+    } else {
+      if (!$('#modal-next-btn').prop('disabled')) {
+        $('#modal-next-btn')[0].focus();
+      } else {
+        $(`#saleableChk${ABC.returns.numOfRows}`).focus();
+      }
+    }
+  }
+});
+$('#modal-next-btn').on('keydown', (e) => {
+  if (e.keyCode === 9 || e.which === 9) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    if (e.shiftKey === false) {
+      $('#returns-modal-cancel-btn').focus();
+   } else {
+     $(`#saleableChk${ABC.returns.numOfRows}`).focus();
+   }
+ }
+});

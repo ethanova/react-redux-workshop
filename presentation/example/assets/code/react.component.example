@@ -1,0 +1,20 @@
+import React, { Component } from 'react'
+import classNames from 'classnames'
+import XWingFrame from 'ship-frames'
+
+class XWing extends Component {
+  render () {
+    return (
+      <XWingFrame>
+        {this.props.pilot}
+      </XWingFrame>
+    )
+  }
+}
+
+XWing.propTypes = {
+  pilot: React.PropTypes.object,
+  initialColor: React.PropTypes.string,
+};
+
+export default XWing;

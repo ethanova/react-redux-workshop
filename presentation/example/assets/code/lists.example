@@ -1,0 +1,24 @@
+const siths = [
+  'Vader',
+  'Sidious',
+  'Plagueis the Wise'
+];
+
+const SithAvatar = (props) => {
+  return (
+    <div onClick={props.onClickFn}>
+      <img src={props.img} />
+      <div>{props.name}</div>
+    </div>
+  )
+}
+
+// Can be used as many times and as many places as you want!!
+// vvvvvvvvvvvvvvvvvvv
+return (
+  <SithAvatar
+    name={siths[3]}
+    img={anImgUrl}
+    onClick={onClickFn}
+  />
+)
