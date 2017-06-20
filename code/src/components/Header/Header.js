@@ -5,7 +5,7 @@ import HeaderTitle from './HeaderTitle'
 
 export const Header = () => (
   <div>
-    <HeaderTitle />
+    <HeaderTitle where='galaxy' />
     <IndexLink to='/' activeClassName={classes.activeRoute}>
       Pod Creator
     </IndexLink>
