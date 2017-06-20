@@ -7,11 +7,11 @@ export const Header = () => (
   <div>
     <HeaderTitle />
     <IndexLink to='/' activeClassName={classes.activeRoute}>
-      Home
+      Pod Creator
     </IndexLink>
     {' · '}
     <Link to='/counter' activeClassName={classes.activeRoute}>
-      Counter
+      Player
     </Link>
   </div>
 )

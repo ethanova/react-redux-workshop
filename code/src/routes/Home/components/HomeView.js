@@ -1,14 +1,25 @@
 import React from 'react'
-import DuckImage from '../assets/Duck.jpg'
 import classes from './HomeView.scss'
 
 export const HomeView = () => (
   <div>
-    <h4>Welcome!</h4>
-    <img
-      alt='This is a duck, because Redux!'
-      className={classes.duck}
-      src={DuckImage} />
+    <h2>Create your pod-racer!</h2>
+    <div className={classes.nameEntry}>
+      <div>Pilot Name</div>
+      <div><input className={classes.nameInput} /></div>
+    </div>
+    <div className={classes.nameEntry}>
+      <div>Ship Name</div>
+      <div><input className={classes.nameInput} /></div>
+    </div>
+    <div className={classes.nameEntry}>
+      <div>Ship Max Speed</div>
+      <div><input className={classes.nameInput} /></div>
+    </div>
+    <div className={classes.nameEntry}>
+      <div>Ship Acceleration</div>
+      <div><input className={classes.nameInput} /></div>
+    </div>
   </div>
 )
 
