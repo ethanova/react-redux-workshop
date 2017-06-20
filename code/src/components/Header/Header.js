@@ -1,10 +1,11 @@
 import React from 'react'
 import { IndexLink, Link } from 'react-router'
 import classes from './Header.scss'
+import HeaderTitle from './HeaderTitle'
 
 export const Header = () => (
   <div>
-    <h1>React Redux Starter Kit</h1>
+    <HeaderTitle />
     <IndexLink to='/' activeClassName={classes.activeRoute}>
       Home
     </IndexLink>
