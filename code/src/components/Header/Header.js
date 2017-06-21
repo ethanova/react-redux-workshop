@@ -1,7 +1,6 @@
 import React from 'react'
 import { IndexLink, Link } from 'react-router'
 import classes from './Header.scss'
-import HeaderTitle from './HeaderTitle'
 
 export const Header = () => (
   <div>
