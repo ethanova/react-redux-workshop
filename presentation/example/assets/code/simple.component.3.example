@@ -1,0 +1,13 @@
+import React, { Component } from 'react'
+
+class HeaderTitle extends Component {
+  render() {
+    return (
+      <div>
+        <h1>The best pod racing app in the whole galaxy!</h1>
+      </div>
+    )
+  }
+}
+
+export default HeaderTitle

@@ -146,14 +146,77 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit caps>
             Time for you to make your own component!
           </Heading>
-          <Heading size={2} fit caps>
-            Header (resuable) with description
+          <List>
+            <ListItem>Use the Hands-on1 branch to get started</ListItem>
+            <ListItem>Create a header component in src/components/Header/HeaderTitle.js and import it in its sibling Header.js</ListItem>
+            <ListItem>Don't forget to use yarn start from cmd prompt in that directory to see the app on localhost:3000</ListItem>
+          </List>
+        </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={5}>
+            HeaderTitle.js
           </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/simple.component.2.example')}
+            margin="20px auto"
+          />
+          <Heading size={5}>
+            Header.js
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/simple.component.1.example')}
+            margin="20px auto"
+          />
+        </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={5}>
+            Functional component
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/simple.component.2.example')}
+            margin="20px auto"
+          />
+          <Heading size={5}>
+            Class component
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/simple.component.3.example')}
+            margin="20px auto"
+          />
+        </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={5}>
+            With JSX
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/jsx.example')}
+            margin="20px auto"
+          />
+          <Heading size={5}>
+            Without
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/jsx-none.example')}
+            margin="20px auto"
+          />
+          <Notes>
+            <ol>
+              <li>JSX elements just create functions that React uses to display to DOM.</li>
+              <li>React is creating element functions that take in props and tell React what to show in the DOM based off those props</li>
+            </ol>
+          </Notes>
         </Slide>
 
 
         <Slide>
           <ComponentPlayground
+            code={require('raw-loader!../assets/code/jsx.example')}
             theme="dark"
           />
         </Slide>
