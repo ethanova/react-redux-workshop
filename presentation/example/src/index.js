@@ -212,14 +212,36 @@ export default class Presentation extends React.Component {
             </ol>
           </Notes>
         </Slide>
-
-
-        <Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={1}>
+            Let's do data input!
+          </Heading>
+          <Text>Checkout Hands-on2 branch</Text>
+        </Slide>
+        <Slide bgColor="lightBlue">
           <ComponentPlayground
-            code={require('raw-loader!../assets/code/jsx.example')}
+            width="90%"
+          textSize="1.5rem"
+            code={require('raw-loader!../assets/code/textboxes.1.example')}
             theme="dark"
           />
+          <Notes>
+            Explain state: I know in my head my favorite tv show, you don't, unless I use a callback and tell you. I can access it inside me and change it.
+          </Notes>
         </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={1}>
+            Recap for hands on activity 2
+          </Heading>
+          <List>
+            <ListItem>Branch: Hands-on2</ListItem>
+            <ListItem>Code: src/routes/home/components/homeview.js</ListItem>
+            <ListItem>If input is given value prop, give it onChange prop and pass a function</ListItem>
+            <ListItem>this.setState can set state inside a class member function, but don't forget to .bind(this) that function in the constructor</ListItem>
+            <ListItem>this.state = {} can be done in the constructor to set default values</ListItem>
+          </List>
+        </Slide>
+
         <Slide bgImage={images.city.replace('/', '')} bgDarken={0.75}>
           <Appear fid="1">
             <Heading size={1} caps fit textColor="lightBlue">
