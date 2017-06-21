@@ -65,8 +65,10 @@ export default class Presentation extends React.Component {
           <Notes>
             <ol>
               <li>You're just here to see little ol me</li>
+              <li>Celebrate the death of jquery</li>
               <li>We're gathered here today to RAISE YOU UP from the ignorance of jquery, to SAVE YOUR SOULS
                 and bring to you the light of REACT</li>
+              <li>Walk away being able to use it or at least be familiar</li>
             </ol>
           </Notes>
         </Slide>
@@ -112,6 +114,11 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/lists-bad.example')}
             margin="20px auto"
           />
+          <Notes>
+            <ol>
+              <li>Compiled code, will know when react is wrong, not with jquery tho</li>
+            </ol>
+          </Notes>
         </Slide>
         <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>
@@ -138,6 +145,9 @@ export default class Presentation extends React.Component {
         <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>
             Time for you to make your own component!
+          </Heading>
+          <Heading size={2} fit caps>
+            Header (resuable) with description
           </Heading>
         </Slide>
 
