@@ -15,7 +15,6 @@ class HomeView extends React.Component {
     this.setPilotName = this.setPilotName.bind(this)
     this.setShipMaxSpeed = this.setShipMaxSpeed.bind(this)
     this.setShipAcceleration = this.setShipAcceleration.bind(this)
-    this.get5secondSpeed = this.get5secondSpeed.bind(this)
   }
 
   setPilotName (e) {
@@ -34,17 +33,6 @@ class HomeView extends React.Component {
     this.setState({
       shipAcceleration: e.target.value
     })
-  }
-
-  get5secondSpeed () {
-    let speed = 0
-    for (let x = 0; x < 5; x++) {
-      speed += Number(this.state.shipAcceleration)
-    }
-    if (speed > this.state.shipMaxSpeed) {
-      speed = this.state.shipMaxSpeed
-    }
-    return speed
   }
 
   render () {
@@ -92,7 +80,7 @@ class HomeView extends React.Component {
           </div>
         </div>
         <div>
-          5 second speed: {this.get5secondSpeed()}
+          
         </div>
       </div>
 
