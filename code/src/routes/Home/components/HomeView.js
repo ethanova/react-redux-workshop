@@ -18,13 +18,6 @@ class HomeView extends React.Component {
     this.get5secondSpeed = this.get5secondSpeed.bind(this)
   }
 
-  componentDidMount() {
-    this.pilotNameInput.focus()
-    // setTimeout(() => {
-    //   this.pilotNameInput.focus()
-    // })
-  }
-
   setPilotName (e) {
     this.setState({
       pilotName: e.target.value
@@ -65,7 +58,6 @@ class HomeView extends React.Component {
               className={classes.nameInput}
               value={this.state.pilotName}
               onChange={this.setPilotName}
-              ref={(elem) => this.pilotNameInput = elem}
             />
           </div>
         </div>
