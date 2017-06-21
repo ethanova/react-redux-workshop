@@ -5,32 +5,6 @@ class HomeView extends React.Component {
   constructor (props) {
     super(props)
 
-    this.state = {
-      pilotName: '',
-      shipName: '',
-      shipMaxSpeed: 0,
-      shipAcceleration: 0
-    }
-
-    this.setPilotName = this.setPilotName.bind(this)
-  }
-
-  setPilotName (e) {
-    this.setState({
-      pilotName: e.target.value
-    }, () => setTimeout(console.log(this.state), 1000))
-  }
-
-  setShipMaxSpeed (e) {
-    this.setState({
-      shipMaxSpeed: e.target.value
-    })
-  }
-
-  setShipAcceleration (e) {
-    this.setState({
-      shipAcceleration: e.target.value
-    })
   }
 
   render () {
@@ -42,8 +16,6 @@ class HomeView extends React.Component {
           <div>
             <input
               className={classes.nameInput}
-              value={this.state.pilotName}
-              onChange={this.setPilotName}
             />
           </div>
         </div>
@@ -52,8 +24,6 @@ class HomeView extends React.Component {
           <div>
             <input
               className={classes.nameInput}
-              value={this.state.shipName}
-              onChange={(e) => this.setState({ shipName: e.target.value })}
             />
           </div>
         </div>
@@ -62,8 +32,6 @@ class HomeView extends React.Component {
           <div>
             <input
               className={classes.nameInput}
-              value={this.state.shipMaxSpeed}
-              onChange={this.setShipMaxSpeed}
             />
           </div>
         </div>
@@ -72,8 +40,6 @@ class HomeView extends React.Component {
           <div>
             <input
               className={classes.nameInput}
-              value={this.state.shipAcceleration}
-              onChange={this.setShipAcceleration}
             />
           </div>
         </div>
