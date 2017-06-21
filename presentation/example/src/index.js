@@ -241,6 +241,18 @@ export default class Presentation extends React.Component {
             <ListItem>this.state = {} can be done in the constructor to set default values</ListItem>
           </List>
         </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={4}>
+            You've used member functions, now do it to "compute" something and output it at the bottom of the component
+          </Heading>
+          <List>
+            <ListItem>Branch: Hands-on3</ListItem>
+            <ListItem>Code: src/routes/home/components/homeview.js</ListItem>
+            <ListItem>Use member function to compute something based on state, like if pilot === 'Ethan' then output "Wow you have the best pilot"</ListItem>
+            <ListItem>Inside JSX, you can write Javascript inside { '{ curly brackets }' } to have it execute</ListItem>
+            <ListItem>Remember to access your member functions off of "this" variable (i.e. this.myFunc)</ListItem>
+          </List>
+        </Slide>
 
         <Slide bgImage={images.city.replace('/', '')} bgDarken={0.75}>
           <Appear fid="1">
