@@ -11,8 +11,6 @@ import preloader from '../../src/utils/preloader';
 
 import createTheme from '../../src/themes/default';
 
-import Interactive from '../assets/interactive';
-
 require('normalize.css');
 require('../../src/themes/default/index.css');
 
@@ -25,6 +23,7 @@ const images = {
   markdown: require('../assets/markdown.png'),
   hansolo: require('../assets/hansolo.jpg'),
   redux: require('../assets/redux.png'),
+  noTime: require('../assets/notime.jpg'),
 };
 
 preloader(images);
@@ -93,9 +92,10 @@ export default class Presentation extends React.Component {
           code={require('raw-loader!../assets/code/jquery-spaghetti.1.example')}
           ranges={[
             { loc: [0, 32], title: 'jQuery Spaghetti and Debugability' },
-            { loc: [1, 2], title: 'Here\'s one' },
-            { loc: [3, 4], title: 'Here\'s one' },
-            { loc: [25, 26], title: 'Here\'s one' },
+            { loc: [0, 32], title: 'Which is breaking your code?' },
+            { loc: [1, 2], title: 'Is it this one?' },
+            { loc: [3, 4], title: 'Come out, come out wherever you are!' },
+            { loc: [25, 26], title: 'AH HA! Wait. Maybe.' },
           ]}
         />
         <Slide bgColor="lightBlue" notes="<ul><li>talk about that</li><li>and that</li></ul>">
@@ -134,6 +134,9 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide bgColor="lightBlue">
+          <Image src={images.noTime.replace('/', '')} margin="0px auto 40px" height="293px"/>
+        </Slide>
+        <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>
             Let's examine a react component
           </Heading>
@@ -150,18 +153,21 @@ export default class Presentation extends React.Component {
             { loc: [1, 3], title: 'Whatever else your component needs' },
             { loc: [4, 5], title: 'Component declaration' },
             { loc: [14, 18], title: 'Optional, but important' },
-            { loc: [19, 20], title: 'Export, share your component with the world' },
+            { loc: [14, 18], title: 'Validates during compile AND runtime! :O' },
+            { loc: [19, 20], title: 'Share your baby with the world' },
             { loc: [4, 13], title: 'Your component!' },
             { loc: [5, 12], title: 'Where the magic happens' },
+            { loc: [6, 11], title: 'Render has to have a root element, like <div></div>' },
           ]}
         />
         <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>
             Time for you to make your own component!
           </Heading>
-          <List>
+          <List textColor="white">
             <ListItem>Use the Hands-on1 branch to get started</ListItem>
-            <ListItem>Create a header component in src/components/Header/HeaderTitle.js and import it in its sibling Header.js</ListItem>
+            <ListItem>Create a header component in src/components/Header/HeaderTitle.js</ListItem>
+            <ListItem>Import it in its sibling Header.js</ListItem>
             <ListItem>Don't forget to use yarn start from cmd prompt in that directory to see the app on localhost:3000</ListItem>
           </List>
         </Slide>
@@ -392,7 +398,7 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/container.component.example')}
             margin="20px auto"
           />
-          <Text textColor="white">Use src/routes/Home/components/PodList.cont.js and PodList.js, import in HomeView at bottom</Text>
+          <Text textColor="white">Hands-on6 Branch: src/routes/Home/components/PodList.cont.js and PodList.js, import in HomeView, show at bottom</Text>
           <Notes>
             I want you to build out your container component, have it dispatch a save pod action and pass the data to the store.
             Check it out in the redux dev tools! and the debugger!
