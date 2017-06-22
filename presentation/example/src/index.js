@@ -347,10 +347,11 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/containerToProps.example')}
             margin="20px auto"
           />
-          <Text textColor="white">For you, src/routes/Home/components/HomeView.cont.js</Text>
+          <Text textColor="white">For you, branch Hands-on4 - src/routes/Home/components/ HomeView.cont.js & HomeView.js</Text>
           <Notes>
             I want you to build out your container component, have it dispatch a save pod action and pass the data to the store.
             Check it out in the redux dev tools! and the debugger!
+            Next - show you what happens when the store gets it, but first, initial state.
           </Notes>
         </Slide>
         { codeCartoonSlide }
