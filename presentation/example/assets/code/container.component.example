@@ -1,0 +1,21 @@
+import { connect } from 'react-redux'
+import { pickPlayer } from './reducer'
+import { browserHistory } from 'react-router'
+import { getAvailablePlayers } from '../../store/game'
+
+import PlayerPickerView from './components/PlayerPickerView'
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onPlayerPick: (id) => {
+      dispatch(pickPlayer(id))
+      browserHistory.push('/')
+    },
+  }
+}
+
+const mapStateToProps = (state) => ({
+  players : getAvailablePlayers(state),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(PlayerPickerView)

@@ -43,6 +43,15 @@ const notes = {
   title: 'Be cool',
 };
 
+const codeCartoonSlide = (
+  <Slide bgColor="lightBlue">
+    <Image src={images.redux.replace('/', '')} margin="0px auto 40px" height="400px"/>
+    <Link href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6">
+      <Text bold caps textColor="white">Credit to www.Code-Cartoons.com</Text>
+    </Link>
+  </Slide>
+);
+
 export default class Presentation extends React.Component {
   render() {
     return (
@@ -301,12 +310,7 @@ export default class Presentation extends React.Component {
         <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>Redux</Heading>
         </Slide>
-        <Slide bgColor="lightBlue">
-          <Image src={images.redux.replace('/', '')} margin="0px auto 40px" height="400px"/>
-          <Link href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6">
-            <Text bold caps textColor="white">Credit to www.Code-Cartoons.com</Text>
-          </Link>
-        </Slide>
+        { codeCartoonSlide }
         <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>
             Action Creators
@@ -316,6 +320,23 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/actionCreator.example')}
             margin="20px auto"
           />
+          <Text textColor="white">They go in src/store/game.js</Text>
+        </Slide>
+        { codeCartoonSlide }
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>
+            Container Component
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/container.component.example')}
+            margin="20px auto"
+          />
+          <Text textColor="white">For you, src/routes/Home/components/HomeView.cont.js</Text>
+          <Notes>
+            I want you to build out your container component, have it dispatch a save pod action and pass the data to the store.
+            Check it out in the redux dev tools! and the debugger!
+          </Notes>
         </Slide>
 
 
