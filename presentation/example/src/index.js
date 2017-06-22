@@ -376,7 +376,7 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/reducer.example')}
             margin="20px auto"
           />
-          <Text textColor="white">(Use src/store/game.js)</Text>
+          <Text textColor="white">(Use Hands-on5 branch, src/store/game.js)</Text>
           <Notes>
             Your reducer (all of them) will get this action and decide what to do with it.
             Hand someone a book for state, a sheet of paper for action, and tell them to rewrite it and give that back.
