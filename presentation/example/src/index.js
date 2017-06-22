@@ -18,9 +18,12 @@ require('../../src/themes/default/index.css');
 
 const images = {
   city: require('../assets/city.jpg'),
+  debugging: require('../assets/debugging.png'),
   ethan: require('../assets/ethan.png'),
+  mounting: require('../assets/mounting.png'),
   logo: require('../assets/formidable-logo.svg'),
-  markdown: require('../assets/markdown.png')
+  markdown: require('../assets/markdown.png'),
+  hansolo: require('../assets/hansolo.jpg')
 };
 
 preloader(images);
@@ -53,7 +56,7 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit caps textColor="black">
             Bringing you into the wonderful world of modern web apps
           </Heading>
-          <Link href="https://github.com/FormidableLabs/spectacle">
+          <Link href="https://github.com/ethanova/react-redux-workshop">
             <Text bold caps textColor="tertiary">View on Github</Text>
           </Link>
         </Slide>
@@ -106,8 +109,8 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide bgColor="lightBlue">
-          <Heading size={1} caps>
-            Jquery is not
+          <Heading size={1} fit caps>
+            Jquery isn't about that life
           </Heading>
           <CodePane
             lang="javascript"
@@ -153,6 +156,15 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <Slide bgColor="lightBlue">
+          <CodePane
+            lang="jsx"
+            textSize="1.2rem"
+            source={require('raw-loader!../assets/code/react.component.example')}
+            margin="20px auto"
+          />
+          />
+        </Slide>
+        <Slide bgColor="lightBlue">
           <Heading size={5}>
             HeaderTitle.js
           </Heading>
@@ -189,63 +201,42 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide bgColor="lightBlue">
-          <Heading size={5}>
-            With JSX
-          </Heading>
-          <CodePane
-            lang="jsx"
-            source={require('raw-loader!../assets/code/jsx.example')}
-            margin="20px auto"
-          />
-          <Heading size={5}>
-            Without
-          </Heading>
-          <CodePane
-            lang="jsx"
-            source={require('raw-loader!../assets/code/jsx-none.example')}
-            margin="20px auto"
-          />
-          <Notes>
-            <ol>
-              <li>JSX elements just create functions that React uses to display to DOM.</li>
-              <li>React is creating element functions that take in props and tell React what to show in the DOM based off those props</li>
-            </ol>
-          </Notes>
-        </Slide>
-        <Slide bgColor="lightBlue">
           <Heading size={1}>
             Let's do data input!
           </Heading>
-          <Text>Checkout Hands-on2 branch</Text>
+          <Text>Checkout Hands-on2 branch - don't worry about which file yet</Text>
         </Slide>
         <Slide bgColor="lightBlue">
           <ComponentPlayground
             width="90%"
-          textSize="1.5rem"
+            textSize="1.5rem"
             code={require('raw-loader!../assets/code/textboxes.1.example')}
             theme="dark"
           />
           <Notes>
-            Explain state: I know in my head my favorite tv show, you don't, unless I use a callback and tell you. I can access it inside me and change it.
+            Show value on its own first. Then with onChange. Then with the function. Then with binding.
+            Explain state: I know in my head my favorite tv show, you don't, unless I use a callback and tell you.
+            I can access it inside me and change it. setState() merges.
           </Notes>
         </Slide>
         <Slide bgColor="lightBlue">
-          <Heading size={1}>
+          <Heading size={1} fit caps>
             Recap for hands on activity 2
           </Heading>
-          <List>
+          <List textColor="white">
             <ListItem>Branch: Hands-on2</ListItem>
             <ListItem>Code: src/routes/home/components/homeview.js</ListItem>
             <ListItem>If input is given value prop, give it onChange prop and pass a function</ListItem>
-            <ListItem>this.setState can set state inside a class member function, but don't forget to .bind(this) that function in the constructor</ListItem>
-            <ListItem>this.state = {} can be done in the constructor to set default values</ListItem>
+            <ListItem>this.setState({'{}'}) can set state inside a class member function, but don't forget to this.myFunc = this.myFunc.bind(this) that function in the constructor</ListItem>
+            <ListItem>this.state = {'{}'} can be done in the constructor to set default values</ListItem>
+            <ListItem>this.state.myProperty is how you access your info</ListItem>
           </List>
         </Slide>
         <Slide bgColor="lightBlue">
-          <Heading size={4}>
+          <Heading size={1} fit caps>
             You've used member functions, now do it to "compute" something and output it at the bottom of the component
           </Heading>
-          <List>
+          <List textColor="white">
             <ListItem>Branch: Hands-on3</ListItem>
             <ListItem>Code: src/routes/home/components/homeview.js</ListItem>
             <ListItem>Use member function to compute something based on state, like if pilot === 'Ethan' then output "Wow you have the best pilot"</ListItem>
@@ -253,6 +244,66 @@ export default class Presentation extends React.Component {
             <ListItem>Remember to access your member functions off of "this" variable (i.e. this.myFunc)</ListItem>
           </List>
         </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>React Lifecycle</Heading>
+          <Heading size={4} fit caps>That's right! Your components have lives! They Live! And Die :(</Heading>
+          <Text>A couple of the notable lifecycle events...</Text>
+          <List>
+            <ListItem>constructor</ListItem>
+            <ListItem>componentWillReceiveProps</ListItem>
+            <ListItem>render</ListItem>
+            <ListItem>componentDidMount</ListItem>
+          </List>
+          <Text>Find them at https://facebook.github.io/react/docs/react-component.html</Text>
+        </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>React Ref & the DOM</Heading>
+          <Notes>Ref allows you to access a certain element after render. Like when you need to access it during...</Notes>
+        </Slide>
+        <Slide bgColor="lightBlue">
+          <Image src={images.mounting.replace('/', '')} margin="0px auto 40px" />
+        </Slide>
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          width="90%"
+          textSize="1.5rem"
+          code={require('raw-loader!../assets/code/ref.example')}
+          ranges={[
+            { loc: [0, 112], title: 'Using Refs' },
+            { loc: [67, 68], title: 'Define the ref' },
+            { loc: [63, 69], title: 'Access this element' },
+            { loc: [20, 26], title: 'Use the ref' },
+            { loc: [22, 25], title: 'May be necessary in IE' }
+          ]}
+        />
+        <Slide bgImage={images.debugging.replace('/', '')} />
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>Props</Heading>
+        </Slide>
+        <Slide bgImage={images.hansolo.replace('/', '')} />
+        <CodeSlide
+          transition={[]}
+          lang="js"
+          width="90%"
+          textSize="1.5rem"
+          code={require('raw-loader!../assets/code/ref.example')}
+          ranges={[
+            { loc: [0, 112], title: 'Using Props' },
+            { loc: [63, 69], title: 'All default elements have props' },
+            { loc: [64, 65], title: '"class" is reserved, use className for css' },
+            { loc: [65, 68], title: 'Lots of others, Google it' },
+          ]}
+        />
+
+
+
+
+
+
+
+
+
 
         <Slide bgImage={images.city.replace('/', '')} bgDarken={0.75}>
           <Appear fid="1">
