@@ -411,143 +411,33 @@ export default class Presentation extends React.Component {
             If you don't have key, React won't know what element goes where when it re-renders
           </Notes>
         </Slide>
-
-
-
-
-
-
-
-        <Slide bgImage={images.city.replace('/', '')} bgDarken={0.75}>
-          <Appear fid="1">
-            <Heading size={1} caps fit textColor="lightBlue">
-              Full Width
-            </Heading>
-          </Appear>
-          <Appear fid="2">
-            <Heading size={1} caps fit textColor="tertiary">
-              Adjustable Darkness
-            </Heading>
-          </Appear>
-          <Appear fid="3">
-            <Heading size={1} caps fit textColor="lightBlue">
-              Background Imagery
-            </Heading>
-          </Appear>
+        { codeCartoonSlide }
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>
+            Async Actions
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/asyncAction.example')}
+            margin="20px auto"
+          />
+          <Notes>
+            If you don't have key, React won't know what element goes where when it re-renders
+          </Notes>
         </Slide>
         <Slide bgColor="lightBlue">
-          <Heading caps fit>Flexible Layouts</Heading>
-          <Layout>
-            <Fill>
-              <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                Left
-              </Heading>
-            </Fill>
-            <Fill>
-              <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                Right
-              </Heading>
-            </Fill>
-          </Layout>
-        </Slide>
-        <Slide bgColor="black">
-          <BlockQuote>
-            <Quote>Wonderfully formatted quotes</Quote>
-            <Cite>Ken Wheeler</Cite>
-          </BlockQuote>
-        </Slide>
-        <Slide bgColor="tertiary">
-          <Heading caps fit size={1} textColor="lightBlue">
-            Inline Markdown
+          <Heading size={1} fit caps>
+            Extra Credit
           </Heading>
-          <Markdown>
-            {`
-  ![Markdown Logo](${images.markdown.replace('/', '')})
+        </Slide>
+        
 
-  You can write inline images, [Markdown Links](http://commonmark.org), paragraph text and most other markdown syntax
-  * Lists too!
-  * With ~~strikethrough~~ and _italic_
-  * And let's not forget **bold**
-            `}
-          </Markdown>
-        </Slide>
-        {
-          MarkdownSlides`
-#### Create Multiple Slides in Markdown
-All the same tags and elements supported in <Markdown /> are supported in MarkdownSlides.
----
-Slides are separated with **three dashes** and can be used _anywhere_ in the deck. The markdown can either be:
-* A Tagged Template Literal
-* Imported Markdown from another file
-          `
-        }
-        <SlideSet>
-          <Slide bgColor="secondary" textColor="lightBlue">
-            <List>
-              <Appear><ListItem>Inline style based theme system</ListItem></Appear>
-              <Appear><ListItem>Autofit text</ListItem></Appear>
-              <Appear><ListItem>Flexbox layout system</ListItem></Appear>
-              <Appear><ListItem>PDF export</ListItem></Appear>
-              <Appear><ListItem>And...</ListItem></Appear>
-            </List>
-          </Slide>
-          <Slide bgColor="lightBlue">
-            <Heading size={1} caps fit textColor="tertiary">
-              Your presentations are interactive
-            </Heading>
-            <Interactive/>
-          </Slide>
-        </SlideSet>
-        <Slide bgColor="lightBlue"
-          notes="Hard to find cities without any pizza"
-        >
-          <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-            Pizza Toppings
-          </Heading>
-          <Layout>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHeaderItem/>
-                  <TableHeaderItem>2011</TableHeaderItem>
-                  <TableHeaderItem>2013</TableHeaderItem>
-                  <TableHeaderItem>2015</TableHeaderItem>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                <TableRow>
-                  <TableItem>None</TableItem>
-                  <TableItem>61.8%</TableItem>
-                  <TableItem>39.6%</TableItem>
-                  <TableItem>35.0%</TableItem>
-                </TableRow>
-                <TableRow>
-                  <TableItem>Pineapple</TableItem>
-                  <TableItem>28.3%</TableItem>
-                  <TableItem>54.5%</TableItem>
-                  <TableItem>61.5%</TableItem>
-                </TableRow>
-                <TableRow>
-                  <TableItem>Pepperoni</TableItem>
-                  <TableItem/>
-                  <TableItem>50.2%</TableItem>
-                  <TableItem>77.2%</TableItem>
-                </TableRow>
-                <TableRow>
-                  <TableItem>Olives</TableItem>
-                  <TableItem/>
-                  <TableItem>24.9%</TableItem>
-                  <TableItem>55.9%</TableItem>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </Layout>
-        </Slide>
-        <Slide bgColor="tertiary">
-          <Heading size={1} caps fit lineHeight={1.5} textColor="lightBlue">
-            Made with love in Seattle by
-          </Heading>
-          <Link href="http://www.formidable.com"><Image width="100%" src={images.logo}/></Link>
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>Extra resources</Heading>
+          <List>
+            <ListItem>Redux videos, by creator of redux - https://egghead.io/lessons/javascript-redux-the-single-immutable-state-tree</ListItem>
+            <ListItem>The redux code cartoon - https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6</ListItem>
+          </List>
         </Slide>
       </Deck>
     );

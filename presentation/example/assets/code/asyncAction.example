@@ -1,0 +1,11 @@
+export function clickPlayerIcon (team, position) {
+  return (dispatch, getState) => {
+    const globalState = getState()
+    if (globalState.game.started) {
+      dispatch(registerShot(team, position))
+    } else {
+      dispatch(pickPlayer(team, position))
+      browserHistory.push('/PlayerPicker')
+    }
+  }
+}
