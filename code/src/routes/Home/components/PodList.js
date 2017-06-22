@@ -1,12 +1,9 @@
 import React from 'react'
 
 const PodList = (props) => {
-  const renderPods = props.pods.map((pod, idx) => (
-    <div key={idx}>
-      The ship {pod.shipName} is piloted by {pod.pilotName} and has a max
-      speed of { pod.maxSpeed } and acceleration of { pod.maxAcceleration }
-    </div>
-  ))
+  // write a renderPods function here that uses .map() on the pods
+  // data passed down through props. Don't forget elements created
+  // inside map need a key= prop!
   return (
     <div>
       { renderPods }
@@ -15,7 +12,6 @@ const PodList = (props) => {
 }
 
 PodList.propTypes = {
-  pods: React.PropTypes.array,
 }
 
 export default PodList

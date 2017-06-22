@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => ({
-  pods: state.game.pods,
+  // state to pass down
 })
 
 export default connect(mapStateToProps, null)(PodList)
