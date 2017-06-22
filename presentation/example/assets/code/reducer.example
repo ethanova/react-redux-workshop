@@ -1,0 +1,28 @@
+export default function gameReducer (state = initialState, action) {
+  switch (action.type) {
+    case PICK_PLAYER: {
+      return {
+        ...state,
+        picking: {
+          team: action.team,
+          position: action.position,
+        },
+      }
+    }
+    case REGISTER_SHOT: {
+      return {
+        ...state,
+        eventsHistory: [
+          ...state.eventsHistory,
+          [ ...state.events.slice() ]
+        ],
+        shotModal: {
+          open: true,
+          team: action.team,
+          position: action.position,
+        },
+      }
+    }
+    default: return state
+  }
+}

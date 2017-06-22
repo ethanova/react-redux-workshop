@@ -1,0 +1,17 @@
+import React, { PropTypes } from 'react'
+import styles from './PlayerPickerView.scss'
+
+export const PlayerPickerView = (props) => {
+  return (
+    <div className={styles.nameList}>
+      {props.players}
+    </div>
+  )
+}
+
+PlayerPickerView.propTypes = {
+  players: PropTypes.array,
+  onPlayerPick: PropTypes.func,
+}
+
+export default PlayerPickerView

@@ -338,6 +338,79 @@ export default class Presentation extends React.Component {
             Check it out in the redux dev tools! and the debugger!
           </Notes>
         </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>
+            The wrapped, "dumb" component
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/containerToProps.example')}
+            margin="20px auto"
+          />
+          <Text textColor="white">For you, src/routes/Home/components/HomeView.cont.js</Text>
+          <Notes>
+            I want you to build out your container component, have it dispatch a save pod action and pass the data to the store.
+            Check it out in the redux dev tools! and the debugger!
+          </Notes>
+        </Slide>
+        { codeCartoonSlide }
+        <Slide bgColor="lightBlue">
+          <Heading size={5} textColor="white" caps>
+            Initial State
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/initialState.example')}
+            margin="20px auto"
+          />
+          <Text textColor="white">(It's in src/store/game.js with your reducer)</Text>
+          <Notes>Go ahead and create this in yours, we're just going to save an array of pods into state for now</Notes>
+        </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={5} textColor="white" caps>
+            Reducer-ing your action
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/reducer.example')}
+            margin="20px auto"
+          />
+          <Text textColor="white">(Use src/store/game.js)</Text>
+          <Notes>
+            Your reducer (all of them) will get this action and decide what to do with it.
+            Hand someone a book for state, a sheet of paper for action, and tell them to rewrite it and give that back.
+          </Notes>
+        </Slide>
+        { codeCartoonSlide }
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>
+            Make a new Container Component!
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/container.component.example')}
+            margin="20px auto"
+          />
+          <Text textColor="white">Use src/routes/Home/components/PodList.cont.js and PodList.js, import in HomeView at bottom</Text>
+          <Notes>
+            I want you to build out your container component, have it dispatch a save pod action and pass the data to the store.
+            Check it out in the redux dev tools! and the debugger!
+          </Notes>
+        </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>
+            Make a new Container Component!
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/mapAndKey.example')}
+            margin="20px auto"
+          />
+          <Text textColor="white">Use .map() on arrays, make sure array-ed elements have key= prop</Text>
+          <Notes>
+            If you don't have key, React won't know what element goes where when it re-renders
+          </Notes>
+        </Slide>
 
 
 
@@ -408,14 +481,6 @@ Slides are separated with **three dashes** and can be used _anywhere_ in the dec
 * Imported Markdown from another file
           `
         }
-        <Slide bgColor="lightBlue">
-          <Heading caps fit size={1} textColor="tertiary">
-            Smooth
-          </Heading>
-          <Heading caps fit size={1} textColor="secondary">
-            Combinable Transitions
-          </Heading>
-        </Slide>
         <SlideSet>
           <Slide bgColor="secondary" textColor="lightBlue">
             <List>

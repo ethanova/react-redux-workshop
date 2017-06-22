@@ -1,5 +1,6 @@
 import React from 'react'
 import classes from './HomeView.scss'
+import PodList from './PodList.cont'
 
 class HomeView extends React.Component {
   constructor (props) {
@@ -29,7 +30,7 @@ class HomeView extends React.Component {
   setPilotName (e) {
     this.setState({
       pilotName: e.target.value
-    }, () => setTimeout(console.log(this.state), 1000))
+    })
   }
 
   setShipMaxSpeed (e) {
@@ -113,8 +114,8 @@ class HomeView extends React.Component {
           5 second speed: {this.get5secondSpeed()}
         </div>
         <button onClick={this.handleSaveClick}>Save your pod!</button>
+        <PodList />
       </div>
-
     )
   }
 }

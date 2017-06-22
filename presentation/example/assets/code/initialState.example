@@ -1,0 +1,26 @@
+const initialState = {
+  picking: {
+    team: null,
+    position: null,
+  },
+  started: false,
+  players,
+  playerList: createPlayerList(players),
+  teams: {
+    [`${Teams.HOME}`]: {
+      [`${Positions.OFFENSE}`]: 0,
+      [`${Positions.DEFENSE}`]: 0,
+    },
+    [`${Teams.AWAY}`]: {
+      [`${Positions.OFFENSE}`]: 0,
+      [`${Positions.DEFENSE}`]: 0,
+    },
+  },
+  events: [],
+  eventsHistory: [],
+  shotModal: {
+    open: false,
+    team: null,
+    position: null,
+  },
+}

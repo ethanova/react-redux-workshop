@@ -23,15 +23,23 @@ export function savePod (pilotName, shipName, maxSpeed, maxAcceleration) {
 // Reducer
 // ------------------------------------
 const initialState = {
+  pods: []
 }
 
 export default function gameReducer (state = initialState, action) {
   switch (action.type) {
-    // case PICK_PLAYER: {
-    //   return {
-    //     ...state
-    //   }
-    // }
+    case SAVE_POD: {
+      const newPod = {
+        pilotName: action.pilotName,
+        shipName: action.shipName,
+        maxSpeed: action.maxSpeed,
+        maxAcceleration: action.maxAcceleration,
+      }
+      return {
+        ...state,
+        pods: [...state.pods, newPod]
+      }
+    }
     default: return state
   }
 }

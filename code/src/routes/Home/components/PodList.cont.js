@@ -1,27 +1,22 @@
 import { connect } from 'react-redux'
-import { savePod } from '../../../store/game'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
     wiring in the actions and state necessary to render a presentational
     component - in this case, the counter:   */
 
-import HomeView from './HomeView'
+import PodList from './PodList'
 
 /*  Object of action creators (can also be function that returns object).
     Keys will be passed as props to presentational components. Here we are
     implementing our wrapper around increment; the component doesn't care   */
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    savePod: (pilotName, shipName, maxSpeed, maxAcceleration) => {
-      dispatch(savePod(pilotName, shipName, maxSpeed, maxAcceleration))
-    },
-  }
+  // does the component need to dispatch any actions?
 }
 
 const mapStateToProps = (state) => ({
-  // if the component needs state, deliver it through here
+  pods: state.game.pods,
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeView)
+export default connect(mapStateToProps, null)(PodList)

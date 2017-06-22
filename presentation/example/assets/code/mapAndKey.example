@@ -1,0 +1,7 @@
+const newArray = oldArray.map((oneItemFromArray, index, wholeArray) => {
+  return (
+    <div key={index}>
+      Stuff
+    </div>
+  )
+})

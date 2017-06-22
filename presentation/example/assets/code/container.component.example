@@ -15,7 +15,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => ({
-  players : getAvailablePlayers(state),
+  players : state.game.players,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(PlayerPickerView)
