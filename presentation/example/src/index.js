@@ -23,7 +23,8 @@ const images = {
   mounting: require('../assets/mounting.png'),
   logo: require('../assets/formidable-logo.svg'),
   markdown: require('../assets/markdown.png'),
-  hansolo: require('../assets/hansolo.jpg')
+  hansolo: require('../assets/hansolo.jpg'),
+  redux: require('../assets/redux.png'),
 };
 
 preloader(images);
@@ -183,7 +184,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide bgColor="lightBlue">
-          <Heading size={5}>
+          <Heading size={1} fit caps>
             Functional component
           </Heading>
           <CodePane
@@ -191,7 +192,7 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/simple.component.2.example')}
             margin="20px auto"
           />
-          <Heading size={5}>
+          <Heading size={1} fit caps>
             Class component
           </Heading>
           <CodePane
@@ -281,7 +282,9 @@ export default class Presentation extends React.Component {
         <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>Props</Heading>
         </Slide>
-        <Slide bgImage={images.hansolo.replace('/', '')} />
+        <Slide bgColor="lightBlue">
+          <Image src={images.hansolo.replace('/', '')} margin="0px auto 40px" height="293px"/>
+        </Slide>
         <CodeSlide
           transition={[]}
           lang="js"
@@ -295,9 +298,25 @@ export default class Presentation extends React.Component {
             { loc: [65, 68], title: 'Lots of others, Google it' },
           ]}
         />
-
-
-
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>Redux</Heading>
+        </Slide>
+        <Slide bgColor="lightBlue">
+          <Image src={images.redux.replace('/', '')} margin="0px auto 40px" height="400px"/>
+          <Link href="https://code-cartoons.com/a-cartoon-intro-to-redux-3afb775501a6">
+            <Text bold caps textColor="white">Credit to www.Code-Cartoons.com</Text>
+          </Link>
+        </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>
+            Action Creators
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/actionCreator.example')}
+            margin="20px auto"
+          />
+        </Slide>
 
 
 

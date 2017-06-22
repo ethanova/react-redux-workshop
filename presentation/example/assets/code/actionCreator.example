@@ -1,0 +1,15 @@
+// ------------------------------------
+// Constants
+// ------------------------------------
+export const SAVE_POD = 'SAVE_POD'
+
+// ------------------------------------
+// Actions
+// ------------------------------------
+
+export function savePod (podInfo) {
+  return {
+    type: SAVE_POD,
+    podInfo,
+  }
+}

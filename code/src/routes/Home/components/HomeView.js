@@ -16,6 +16,7 @@ class HomeView extends React.Component {
     this.setShipMaxSpeed = this.setShipMaxSpeed.bind(this)
     this.setShipAcceleration = this.setShipAcceleration.bind(this)
     this.get5secondSpeed = this.get5secondSpeed.bind(this)
+    this.handleSaveClick = this.handleSaveClick.bind(this)
   }
 
   componentDidMount() {
@@ -52,6 +53,15 @@ class HomeView extends React.Component {
       speed = this.state.shipMaxSpeed
     }
     return speed
+  }
+
+  handleSaveClick() {
+    this.props.savePod(
+      this.state.pilotName,
+      this.state.shipName,
+      this.state.shipMaxSpeed,
+      this.state.shipAcceleration,
+    )
   }
 
   render () {
@@ -102,10 +112,15 @@ class HomeView extends React.Component {
         <div>
           5 second speed: {this.get5secondSpeed()}
         </div>
+        <button onClick={this.handleSaveClick}>Save your pod!</button>
       </div>
 
     )
   }
+}
+
+HomeView.propTypes = {
+  savePod: React.PropTypes.func,
 }
 
 export default HomeView
