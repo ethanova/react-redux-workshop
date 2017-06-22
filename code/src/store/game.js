@@ -23,6 +23,7 @@ export function savePod (pilotName, shipName, maxSpeed, maxAcceleration) {
 // Reducer
 // ------------------------------------
 const initialState = {
+  pods: [],
 }
 
 export default function gameReducer (state = initialState, action) {
