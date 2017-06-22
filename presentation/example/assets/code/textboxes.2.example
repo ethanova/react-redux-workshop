@@ -1,0 +1,31 @@
+class HomeView extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = { pilot: 'Ethan' }
+    this.myFunc = this.myFunc.bind(this)
+  }
+
+  myFunc() {
+    this.setState({
+    })
+  }
+
+  render () {
+    return (
+      <div>
+        <h2>Create your pod-racer!</h2>
+        <div>
+          <div>Pilot Name</div>
+          <div>
+            <input
+              value={this.state.pilot}
+              onChange={this.myFunc}
+            />
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+render(<HomeView />, mountNode)

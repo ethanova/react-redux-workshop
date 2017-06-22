@@ -24,6 +24,7 @@ const images = {
   hansolo: require('../assets/hansolo.jpg'),
   redux: require('../assets/redux.png'),
   noTime: require('../assets/notime.jpg'),
+  lifecycle: require('../assets/lifecycle.png'),
 };
 
 preloader(images);
@@ -166,8 +167,8 @@ export default class Presentation extends React.Component {
           </Heading>
           <List textColor="white">
             <ListItem>Use the Hands-on1 branch to get started</ListItem>
-            <ListItem>Create a header component in src/components/Header/HeaderTitle.js</ListItem>
-            <ListItem>Import it in its sibling Header.js</ListItem>
+            <ListItem>Create a simple "Pod-Racer" header component in src/components/Header/HeaderTitle.js</ListItem>
+            <ListItem>Import it in its sibling, Header.js</ListItem>
             <ListItem>Don't forget to use yarn start from cmd prompt in that directory to see the app on localhost:3000</ListItem>
           </List>
         </Slide>
@@ -178,10 +179,9 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/react.component.example')}
             margin="20px auto"
           />
-          />
         </Slide>
         <Slide bgColor="lightBlue">
-          <Heading size={5}>
+          <Heading size={5} textColor="white">
             HeaderTitle.js
           </Heading>
           <CodePane
@@ -189,7 +189,7 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/simple.component.2.example')}
             margin="20px auto"
           />
-          <Heading size={5}>
+          <Heading size={5} textColor="white">
             Header.js
           </Heading>
           <CodePane
@@ -199,7 +199,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
         <Slide bgColor="lightBlue">
-          <Heading size={1} fit caps>
+          <Heading size={5} caps textColor="white">
             Functional component
           </Heading>
           <CodePane
@@ -207,7 +207,7 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/simple.component.2.example')}
             margin="20px auto"
           />
-          <Heading size={1} fit caps>
+          <Heading size={5} caps textColor="white">
             Class component
           </Heading>
           <CodePane
@@ -236,26 +236,21 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide bgColor="lightBlue">
-          <Heading size={1} fit caps>
-            Recap for hands on activity 2
-          </Heading>
-          <List textColor="white">
-            <ListItem>Branch: Hands-on2</ListItem>
-            <ListItem>Code: src/routes/home/components/homeview.js</ListItem>
-            <ListItem>If input is given value prop, give it onChange prop and pass a function</ListItem>
-            <ListItem>this.setState({'{}'}) can set state inside a class member function, but don't forget to this.myFunc = this.myFunc.bind(this) that function in the constructor</ListItem>
-            <ListItem>this.state = {'{}'} can be done in the constructor to set default values</ListItem>
-            <ListItem>this.state.myProperty is how you access your info</ListItem>
-          </List>
+          <Text textColor="white">Code: src/routes/home/components/homeview.js</Text>
+          <CodePane
+            lang="jsx"
+            source={require('raw-loader!../assets/code/textboxes.2.example')}
+            margin="20px auto"
+          />
         </Slide>
         <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>
-            You've used member functions, now do it to "compute" something and output it at the bottom of the component
+            You've used member functions, now use one to display data at the bottom of the component
           </Heading>
           <List textColor="white">
             <ListItem>Branch: Hands-on3</ListItem>
             <ListItem>Code: src/routes/home/components/homeview.js</ListItem>
-            <ListItem>Use member function to compute something based on state, like if pilot === 'Ethan' then output "Wow you have the best pilot"</ListItem>
+            <ListItem>Use member function to compute if pilot === 'YourName' then output "OMG they're the best!"</ListItem>
             <ListItem>Inside JSX, you can write Javascript inside { '{ curly brackets }' } to have it execute</ListItem>
             <ListItem>Remember to access your member functions off of "this" variable (i.e. this.myFunc)</ListItem>
           </List>
@@ -263,6 +258,9 @@ export default class Presentation extends React.Component {
         <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>React Lifecycle</Heading>
           <Heading size={4} fit caps>That's right! Your components have lives! They Live! And Die :(</Heading>
+          <Image src={images.lifecycle.replace('/', '')} margin="0px auto 40px" height="293px"/>
+        </Slide>
+        <Slide bgColor="lightBlue">
           <Text>A couple of the notable lifecycle events...</Text>
           <List>
             <ListItem>constructor</ListItem>
