@@ -85,6 +85,13 @@ export default class Presentation extends React.Component {
             </ol>
           </Notes>
         </Slide>
+        <Slide bgColor="lightBlue">
+          <Heading size={1} fit caps>To Note</Heading>
+          <List>
+            <ListItem>Hot module reloading doesn't work, hard refresh after changes</ListItem>
+            <ListItem>When you run "yarn start", make sure your cmd prompt is at the /code dir with package.json in it </ListItem>
+          </List>
+        </Slide>
         <CodeSlide
           transition={[]}
           lang="js"
