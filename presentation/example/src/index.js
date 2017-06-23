@@ -268,20 +268,21 @@ export default class Presentation extends React.Component {
           <Image src={images.lifecycle.replace('/', '')} margin="0px auto 40px" height="293px"/>
         </Slide>
         <Slide bgColor="lightBlue">
-          <Text>A couple of the notable lifecycle events...</Text>
-          <List>
+          <Text textColor="white">A couple of the notable lifecycle events...</Text>
+          <List textColor="white">
             <ListItem>constructor</ListItem>
             <ListItem>componentWillReceiveProps</ListItem>
             <ListItem>render</ListItem>
             <ListItem>componentDidMount</ListItem>
           </List>
-          <Text>Find them at https://facebook.github.io/react/docs/react-component.html</Text>
+          <Text textColor="white">Find them at https://facebook.github.io/react/docs/react-component.html</Text>
         </Slide>
         <Slide bgColor="lightBlue">
           <Heading size={1} fit caps>React Ref & the DOM</Heading>
           <Notes>Ref allows you to access a certain element after render. Like when you need to access it during...</Notes>
         </Slide>
         <Slide bgColor="lightBlue">
+          <Heading size={5} textColor="white">componentDidMount</Heading>
           <Image src={images.mounting.replace('/', '')} margin="0px auto 40px" />
         </Slide>
         <CodeSlide
