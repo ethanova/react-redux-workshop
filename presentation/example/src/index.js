@@ -176,7 +176,7 @@ export default class Presentation extends React.Component {
             <ListItem>Use the Hands-on1 branch to get started</ListItem>
             <ListItem>Create a simple "Pod-Racer" header component in src/components/Header/HeaderTitle.js</ListItem>
             <ListItem>Import it in its sibling, Header.js</ListItem>
-            <ListItem>Don't forget to use yarn start from cmd prompt in that directory to see the app on localhost:3000</ListItem>
+            <ListItem>Don't forget to use yarn start from cmd prompt in /code directory to see the app on localhost:3000</ListItem>
           </List>
         </Slide>
         <Slide bgColor="lightBlue">
@@ -243,7 +243,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
         <Slide bgColor="lightBlue">
-          <Text textColor="white">Code: src/routes/home/components/homeview.js</Text>
+          <Text textColor="white">You do it! - Code: src/routes/home/components/homeview.js</Text>
           <CodePane
             lang="jsx"
             source={require('raw-loader!../assets/code/textboxes.2.example')}
@@ -418,7 +418,7 @@ export default class Presentation extends React.Component {
             source={require('raw-loader!../assets/code/mapAndKey.example')}
             margin="20px auto"
           />
-          <Text textColor="white">Use .map() on arrays, make sure array-ed elements have key= prop</Text>
+          <Text textColor="white">Use .map() on arrays, make sure array-ed elements have key= prop. Checkout time travel!</Text>
           <Notes>
             If you don't have key, React won't know what element goes where when it re-renders
           </Notes>
